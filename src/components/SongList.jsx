@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { restartSong, changeSong } from './../actions';
 
 const SongList = ({ dispatch, songList }) => {
-  let action;
   return (
     <div>
       <em>Or select from our list:</em>
@@ -14,7 +13,7 @@ const SongList = ({ dispatch, songList }) => {
           if (song.arrayPosition > 0){
             dispatch(restartSong(songId));
           }
-            dispatch(changeSong(songId));
+          dispatch(changeSong(songId));
         }}>
           {song.title} by {song.artist}</li>;
       })}

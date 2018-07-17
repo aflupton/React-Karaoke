@@ -23,7 +23,7 @@ describe('Karaoke App', () => {
     });
 
     it('Should update state when API lyrics are being requested.', () => {
-      const action = actions.requestSong('crocodile rock');
+      const action = actions.requestSong('born to run');
       const newStateEntry = {
         isFetching: true,
         title: action.title,

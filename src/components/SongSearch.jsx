@@ -13,7 +13,7 @@ function SongSearch({ dispatch }){
           return;
         }
         dispatch(fetchSongId(input.value.trim()));
-        console.log('SEARCHED TITLE:');
+        console.log('SEARCHED TITLE: ');
         console.log(input.value.trim());
         input.value = '';
       }}>
