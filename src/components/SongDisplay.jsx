@@ -6,6 +6,7 @@ import { nextLyric, restartSong } from './../actions';
 const SongDisplay = ({ dispatch, song }) => {
   const { title, artist, songArray, arrayPosition, id } = song;
   const currentLine = songArray[arrayPosition];
+  let action;
   return (
     <div>
       <h1>{title}</h1>
@@ -38,26 +39,16 @@ SongDisplay.propTypes = {
 };
 
 const mapStateToProps = state => {
-  let info;
   const song = state.songsById[state.currentSongId];
-  if (!state.songsById[state.currentSongId].isFetching) {
-    info = {
-      id: state.currentSongId,
-      artist: song.artist,
-      title: song.title,
-      songArray: song.songArray,
-      arrayPosition: song.arrayPosition
-    };
-  } else {
-    info = {
-      artist:'',
-      title: '',
-      songArray: '',
-      arrayPosition: ''
-    };
-  }
+  const songInfo = {
+    id: song.songId,
+    artist: song.artist,
+    title: song.title,
+    songArray: song.songArray,
+    arrayPosition: song.arrayPosition
+  };
   return {
-    song: info
+    song: songInfo
   };
 };
 

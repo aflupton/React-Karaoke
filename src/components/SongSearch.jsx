@@ -13,10 +13,8 @@ function SongSearch({ dispatch }){
           return;
         }
         dispatch(fetchSongId(input.value.trim()));
-        // ...we'll add more custom logic here later...
         console.log('SEARCHED TITLE:');
         console.log(input.value.trim());
-        //...instead of these console.log()s....
         input.value = '';
       }}>
         <input placeholder="Song Title" ref={node => {
